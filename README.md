@@ -113,5 +113,4 @@ export const API_BASE_URL = "http://localhost:8080";
 
 ## Project Preview
 
-<a><img src=images/dashboard.png height="600" width="600" /></a>
-
+For Understanding the full stack ecommerce platform from both an user and an admin perspective ,the project preview is given under the images folder.
