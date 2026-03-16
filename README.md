@@ -14,8 +14,8 @@ EcoBazaarX is a sustainability‑focused ecommerce platform built with a React f
 **Tech Stack**
 
 - Frontend: React, React Router, Axios, CRA (`react-scripts`)
-- Backend: Spring Boot, Spring Security, Spring Data JPA, JWT, Java Mail
-- Database: MySQL
+- Backend: Spring Boot, Spring Security, Spring Data JPA, JWT, Spring Mail
+- Database: MySQL Workbench
 
 **Project Structure**
 
