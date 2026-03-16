@@ -52,6 +52,9 @@ Update `src/main/resources/application.properties`:
 - `spring.mail.username`
 - `spring.mail.password`
 
+- (give your own sql password here in application.properties file in backend)
+- (give your own spring mail username and password in application.properties file in backend)
+
 Start backend:
 
 ```bash
