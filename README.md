@@ -82,5 +82,5 @@ Backend
 - If you hit Java version mismatches, align `java.version` and compiler `source/target` in `Backend/SignupForm/SignupForm/pom.xml`.
 - For API base URL, add a `.env` in `Frontend/` and set `REACT_APP_API_BASE_URL`.
 
-  ## For the project preview, look at the images folder for better understanding the ecommerce project from an user and an admin perspective.
+  ## For the project preview, look at the images folder for better understanding this ecommerce project from an user and an admin perspective.
 
