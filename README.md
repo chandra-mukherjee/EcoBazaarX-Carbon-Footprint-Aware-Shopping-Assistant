@@ -33,6 +33,7 @@ EcoBazaarX/
 
 - Node.js 18+ and npm
 - MySQL Workbench
+- Spring Data JPA(JAVA Persistence API)
 - JDK 25 (recommended for current Maven compiler config)
 - Maven Wrapper (already included as `mvnw.cmd`)
 
