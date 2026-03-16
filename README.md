@@ -32,7 +32,7 @@ EcoBazaarX/
 ## Prerequisites
 
 - Node.js 18+ and npm
-- MySQL 8+
+- MySQL Workbench
 - JDK 25 (recommended for current Maven compiler config)
 - Maven Wrapper (already included as `mvnw.cmd`)
 
@@ -97,21 +97,7 @@ export const API_BASE_URL = "http://localhost:8080";
 - Recommendations: `/api/recommendations/*` (USER role)
 - Admin: `/api/admin/*` (ADMIN role)
 
-## Run Tests
 
-Backend:
-
-```bash
-cd Backend\SignupForm\SignupForm
-mvnw.cmd test
-```
-
-Frontend:
-
-```bash
-cd Frontend
-npm test
-```
 
 ## Notes
 
