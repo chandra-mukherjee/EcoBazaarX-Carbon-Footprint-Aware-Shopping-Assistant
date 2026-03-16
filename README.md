@@ -1,117 +1,86 @@
 # EcoBazaarX
 
-EcoBazaarX is a full-stack e-commerce platform focused on eco-friendly products, carbon-aware shopping, and role-based administration.
+EcoBazaarX is a sustainability‑focused ecommerce platform built with a React frontend and a Spring Boot backend. It blends standard shopping flows with a carbon‑impact lens so users can make greener choices while they shop.
 
-## Tech Stack
+**Highlights**
 
-- Frontend: React (CRA), React Router, Axios, Recharts
-- Backend: Spring Boot, Spring Security (JWT), Spring Data JPA(Java Persistence API)
-- Database: MySQL Workbench
-- Auth: JWT + OTP-based password reset via spring mail
+- Auth flow with OTP‑based password recovery
+- Product catalog, detail pages, and search
+- Cart, wishlist, and order management
+- Address management at checkout
+- Carbon footprint summary for cart/checkout
+- Admin and insights screens (UI present; backend APIs may be evolving)
 
-## Project Structure
+**Tech Stack**
 
-```text
-EcoBazaarX/
-  Backend/
-    SignupForm/
-      SignupForm/        # Spring Boot backend
-  Frontend/              # React frontend
+- Frontend: React, React Router, Axios, CRA (`react-scripts`)
+- Backend: Spring Boot, Spring Security, Spring Data JPA, JWT, Java Mail
+- Database: MySQL
+
+**Project Structure**
+
+- `Frontend/` React app
+- `Backend/SignupForm/SignupForm/` Spring Boot app
+- `scripts/` helper scripts
+
+**Quick Start**
+
+Frontend
+
+1. `cd Frontend`
+2. `npm install`
+3. `npm start`
+
+Backend (Windows)
+
+1. `cd Backend/SignupForm/SignupForm`
+2. `mvnw.cmd spring-boot:run`
+
+Backend (macOS/Linux)
+
+1. `cd Backend/SignupForm/SignupForm`
+2. `./mvnw spring-boot:run`
+
+**Configuration**
+
+The backend reads config from `application.properties`. For safety, keep real credentials in local environment variables or a local override file.
+
+Example `application.properties` (sanitize for GitHub):
+
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/LoginDetails
+spring.datasource.username=YOUR_DB_USER
+spring.datasource.password=YOUR_DB_PASSWORD
+
+spring.mail.host=smtp.gmail.com
+spring.mail.port=587
+spring.mail.username=YOUR_EMAIL
+spring.mail.password=YOUR_APP_PASSWORD
 ```
 
-## Core Features
+**Ports**
 
-- User signup/login with JWT authentication
-- Forgot/reset password using OTP email flow
-- Product catalog with search and product details
-- Cart, checkout, and order APIs
-- Carbon impact data model and eco insights
-- Admin modules for users, products, and overview dashboards
-- Role-based route/API protection (`USER`, `ADMIN`)
+- Frontend: `http://localhost:3000`
+- Backend: `http://localhost:8080`
 
-## Prerequisites
+**Scripts**
 
-- Node.js 18+ and npm
-- MySQL Workbench
-- Spring Data JPA(JAVA Persistence API)
-- JDK 25 (recommended for current Maven compiler config)
-- Maven Wrapper (already included as `mvnw.cmd`)
+Frontend
 
-## Backend Setup (Spring Boot)
+- `npm start` Run dev server
+- `npm run build` Production build
+- `npm test` Run tests
 
-Working directory:
+Backend
 
-```bash
-cd Backend\SignupForm\SignupForm
-```
+- `mvnw.cmd spring-boot:run` Run dev server (Windows)
+- `./mvnw spring-boot:run` Run dev server (macOS/Linux)
+- `mvnw.cmd test` Run tests
 
-Update `src/main/resources/application.properties`:
+**Notes**
 
-- `spring.datasource.url` (default DB: `LoginDetails`)
-- `spring.datasource.username`
-- `spring.datasource.password`
-- `spring.mail.username`
-- `spring.mail.password`
+- If you hit Java version mismatches, align `java.version` and compiler `source/target` in `Backend/SignupForm/SignupForm/pom.xml`.
+- For API base URL, add a `.env` in `Frontend/` and set `REACT_APP_API_BASE_URL`.
 
-- (Give your own sql password here in application.properties file in backend)
-- (Give your own spring mail username and password in application.properties file in backend)
+  ## For the project preview, look at the images folder for better understanding the ecommerce project from an user and an admin perspective.
 
-Start backend:
-
-```bash
-mvnw.cmd spring-boot:run
-```
-
-Default backend URL: `http://localhost:8080`
-
-## Frontend Setup (React)
-
-Working directory:
-
-```bash
-cd Frontend
-```
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Run frontend:
-
-```bash
-npm start
-```
-
-Default frontend URL: `http://localhost:3000`
-
-`src/config/api.js` currently points to:
-
-```js
-export const API_BASE_URL = "http://localhost:8080";
-```
-
-## Main API Areas
-
-- Auth: `/api/auth/*` (`signup`, `login`, `forgot`, `reset`)
-- Products: `/api/products`, `/api/product/{id}`, `/api/products/search`
-- Cart: `/api/cart/*` (USER role)
-- Orders: `/api/orders/*` (USER role)
-- Recommendations: `/api/recommendations/*` (USER role)
-- Admin: `/api/admin/*` (ADMIN role)
-
-
-
-
-
-
-## Notes
-
-- CORS in backend allows localhost frontend origins (`3000`, `3001`, `5173`).
-- Replace placeholder DB/mail credentials before running in your environment.
-- Keep `node_modules` and build output out of version control.
-
-## Project Preview
-
-For Understanding the full stack ecommerce platform from both an user and an admin perspective ,the project preview is given under the images folder.
