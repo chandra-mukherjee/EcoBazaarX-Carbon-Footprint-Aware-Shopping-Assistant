@@ -5,9 +5,9 @@ EcoBazaarX is a full-stack e-commerce platform focused on eco-friendly products,
 ## Tech Stack
 
 - Frontend: React (CRA), React Router, Axios, Recharts
-- Backend: Spring Boot, Spring Security (JWT), Spring Data JPA
-- Database: MySQL
-- Auth: JWT + OTP-based password reset via email (SMTP)
+- Backend: Spring Boot, Spring Security (JWT), Spring Data JPA(Java Persistence API)
+- Database: MySQL Workbench
+- Auth: JWT + OTP-based password reset via spring mail
 
 ## Project Structure
 
@@ -53,8 +53,8 @@ Update `src/main/resources/application.properties`:
 - `spring.mail.username`
 - `spring.mail.password`
 
-- (give your own sql password here in application.properties file in backend)
-- (give your own spring mail username and password in application.properties file in backend)
+- (Give your own sql password here in application.properties file in backend)
+- (Give your own spring mail username and password in application.properties file in backend)
 
 Start backend:
 
