@@ -105,10 +105,4 @@ export const API_BASE_URL = "http://localhost:8080";
 - Replace placeholder DB/mail credentials before running in your environment.
 - Keep `node_modules` and build output out of version control.
 
-## Team Members
 
-- Shashank Purohit (TL)
-- Chandra Mukherjee
-- Shubadeep Karmakar
-- Harushi
-- Muskan Kawadkar
