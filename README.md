@@ -134,27 +134,41 @@ show databases;
 
 ## Recommended SQL Commands
 
-create database logindetails;
-use logindetails;
-#drop table products;
-select * from users;
-select * from products;
-select * from orders;
-select * from order_items;
-#ALTER TABLE users ADD role VARCHAR(20) NOT NULL;
-DELETE FROM orders WHERE id = 1;
-DELETE FROM order_items WHERE id = 1;
-DELETE FROM orders WHERE id = 6;
+CREATE DATABASE logindetails;
+USE logindetails;
+
+-- DROP TABLE products;
+
+SELECT * FROM users;
+SELECT * FROM products;
+SELECT * FROM orders;
+SELECT * FROM order_items;
+
+-- ALTER TABLE users ADD role VARCHAR(20) NOT NULL;
+
+DELETE FROM orders 
+WHERE id = 1;
+
+DELETE FROM order_items 
+WHERE id = 1;
+
+DELETE FROM orders 
+WHERE id = 6;
+
 TRUNCATE TABLE orders;
-select * from addresses;
-select * from shipping;
-select * from cart_items;
-select * from carts;
-select * from wishlist_items;
-UPDATE users SET role = 'ADMIN' where id=3;
 
+SELECT * FROM addresses;
+SELECT * FROM shipping;
+SELECT * FROM cart_items;
+SELECT * FROM carts;
+SELECT * FROM wishlist_items;
 
-DELETE FROM users WHERE id = 2;
+UPDATE users 
+SET role = 'ADMIN' 
+WHERE id = 3;
 
-show databases;
+DELETE FROM users 
+WHERE id = 2;
+
+SHOW DATABASES;
 
