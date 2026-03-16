@@ -1,138 +1,128 @@
-EcoBazaarX
+# EcoBazaarX
 
-EcoBazaarX is a complete full-stack e-commerce application designed for selling environmentally friendly products. The platform also includes carbon impact awareness features and an administration system with different user roles.
+EcoBazaarX is a full-stack e-commerce platform focused on eco-friendly products, carbon-aware shopping, and role-based administration.
 
-Technology Stack
+## Tech Stack
 
-Frontend: React (Create React App), React Router, Axios, Recharts
+- Frontend: React (CRA), React Router, Axios, Recharts
+- Backend: Spring Boot, Spring Security (JWT), Spring Data JPA
+- Database: MySQL
+- Auth: JWT + OTP-based password reset via email (SMTP)
 
-Backend: Spring Boot, Spring Security with JWT authentication, Spring Data JPA
+## Project Structure
 
-Database: MySQL
-
-Authentication: JWT along with OTP-based password recovery through email (SMTP)
-
-Project Directory Layout
+```text
 EcoBazaarX/
   Backend/
     SignupForm/
-      SignupForm/        # Backend built with Spring Boot
-  Frontend/              # Frontend built with React
-Key Features
+      SignupForm/        # Spring Boot backend
+  Frontend/              # React frontend
+```
 
-Secure user registration and login using JWT authentication
+## Core Features
 
-Password recovery and reset through OTP sent via email
+- User signup/login with JWT authentication
+- Forgot/reset password using OTP email flow
+- Product catalog with search and product details
+- Cart, checkout, and order APIs
+- Carbon impact data model and eco insights
+- Admin modules for users, products, and overview dashboards
+- Role-based route/API protection (`USER`, `ADMIN`)
 
-Product listing with search functionality and detailed product pages
+## Prerequisites
 
-Shopping cart system, checkout process, and order management APIs
+- Node.js 18+ and npm
+- MySQL 8+
+- JDK 25 (recommended for current Maven compiler config)
+- Maven Wrapper (already included as `mvnw.cmd`)
 
-Carbon footprint tracking and eco-related insights
+## Backend Setup (Spring Boot)
 
-Admin panel for managing users, products, and viewing system statistics
+Working directory:
 
-Role-based access control for both routes and APIs (USER, ADMIN)
-
-Requirements
-
-Make sure the following are installed before running the project:
-
-Node.js (version 18 or higher) and npm
-
-MySQL version 8 or later
-
-JDK 25 (recommended for compatibility with the Maven configuration)
-
-Maven Wrapper (included in the project as mvnw.cmd)
-
-Backend Setup (Spring Boot)
-
-Navigate to the backend folder:
-
+```bash
 cd Backend\SignupForm\SignupForm
+```
 
-Modify the file src/main/resources/application.properties with your configuration:
+Update `src/main/resources/application.properties`:
 
-spring.datasource.url (default database: LoginDetails)
+- `spring.datasource.url` (default DB: `LoginDetails`)
+- `spring.datasource.username`
+- `spring.datasource.password`
+- `spring.mail.username`
+- `spring.mail.password`
 
-spring.datasource.username
+Start backend:
 
-spring.datasource.password
-
-spring.mail.username
-
-spring.mail.password
-
-Start the backend server:
-
+```bash
 mvnw.cmd spring-boot:run
+```
 
-Backend will run at:
+Default backend URL: `http://localhost:8080`
 
-http://localhost:8080
-Frontend Setup (React)
+## Frontend Setup (React)
 
-Go to the frontend directory:
+Working directory:
 
+```bash
 cd Frontend
+```
 
-Install the required packages:
+Install dependencies:
 
+```bash
 npm install
+```
 
-Start the React application:
+Run frontend:
 
+```bash
 npm start
+```
 
-Frontend will run at:
+Default frontend URL: `http://localhost:3000`
 
-http://localhost:3000
+`src/config/api.js` currently points to:
 
-The API base URL is configured in:
-
-src/config/api.js
+```js
 export const API_BASE_URL = "http://localhost:8080";
-Important API Endpoints
+```
 
-Authentication: /api/auth/*
+## Main API Areas
 
-signup
+- Auth: `/api/auth/*` (`signup`, `login`, `forgot`, `reset`)
+- Products: `/api/products`, `/api/product/{id}`, `/api/products/search`
+- Cart: `/api/cart/*` (USER role)
+- Orders: `/api/orders/*` (USER role)
+- Recommendations: `/api/recommendations/*` (USER role)
+- Admin: `/api/admin/*` (ADMIN role)
 
-login
+## Run Tests
 
-forgot password
+Backend:
 
-reset password
-
-Products:
-/api/products
-/api/product/{id}
-/api/products/search
-
-Cart: /api/cart/* (USER role required)
-
-Orders: /api/orders/* (USER role required)
-
-Recommendations: /api/recommendations/* (USER role required)
-
-Admin APIs: /api/admin/* (ADMIN role required)
-
-Running Tests
-
-Backend tests:
-
+```bash
 cd Backend\SignupForm\SignupForm
 mvnw.cmd test
+```
 
-Frontend tests:
+Frontend:
 
+```bash
 cd Frontend
 npm test
-Additional Information
+```
 
-The backend CORS configuration allows frontend requests from localhost ports 3000, 3001, and 5173.
+## Notes
 
-Replace the database and email credentials with your own before running the application.
+- CORS in backend allows localhost frontend origins (`3000`, `3001`, `5173`).
+- Replace placeholder DB/mail credentials before running in your environment.
+- Keep `node_modules` and build output out of version control.
 
-Avoid committing node_modules and compiled build files to version control.
+## Team Members
+
+- Shashank Purohit (TL)
+- Chandra Mukherjee
+- Shubadeep Karmakar
+- Harushi
+- Muskan Kawadkar
