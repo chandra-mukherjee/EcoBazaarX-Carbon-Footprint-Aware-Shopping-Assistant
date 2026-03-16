@@ -113,3 +113,5 @@ export const API_BASE_URL = "http://localhost:8080";
 
 ## Project Preview
 
+<a><img src=images/dashboard.png height="600" width="600" /></a>
+
